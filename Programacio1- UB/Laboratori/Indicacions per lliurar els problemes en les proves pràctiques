@@ -1,0 +1,23 @@
+Format d'entrega
+
+L'entrega es farà mitjançant el campus virtual. S'entregarà un arxiu comprimit, on hi haurà els fonts necessaris per a compilar i executar els problemes (tots els fitxers *.java).
+
+Abans de començar a fer la pràctica, heu de crear una carpeta anomenada:
+
+CognomsNom-X
+
+On:
+
+X identifica la llista de problemes a entregar (pot ser A, B, C, D).
+
+Per exemple:
+
+DelRioDaniel-B, correspon a un alumne que fa la llista de problemes B.
+
+Un cop acabats els problemes resolts haureu de comprimir la carpeta on hi ha els fitxers font i enviar-la mitjançant el campus. Per a generar l'arxiu comprimit cal usar la comanda tar de la següent manera:
+
+tar -czvf CognomsNom-X.tgz CognomsNom-X
+
+on CognomsNom-X és la carpeta on hi ha la llista de problemes.
+
+Aneu després a la tasca corresponent al vostre grup i penjeu el fitxer comprimit.

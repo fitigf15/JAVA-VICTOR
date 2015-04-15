@@ -1,0 +1,44 @@
+/* FET PER: VICTOR GOMEZ FARRUS */
+
+
+import java.util.Scanner;
+
+public class SequenciesIguals{
+	public static void main(String[]args){
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Escriu el nombre de enters que entraras");
+		int n=sc.nextInt(),numero;
+		Sequencia seq1,seq2;
+		
+		System.out.println("Escriviu els nombres de la primera sequencia");
+		seq1=new Sequencia();
+		seq1.SetLlarg(n);
+		
+		for(int i=0;i<n;i++){
+			System.out.println("Escriviu el "+(i+1)+" nombre:");
+			numero=sc.nextInt();
+			seq1.AppendNum(numero,i);
+		}
+		System.out.println("Escriviu els nombres de la segona sequencia");
+		seq2=new Sequencia();
+		seq2.SetLlarg(n);
+		for(int j0;j<n;j++){
+			System.out.println("Escriviu el "+(j+1)+" nombre:");
+			numero=sc.nextInt();
+			seq2.AppendNum(numero,j);
+		}
+		
+		if(seq1.EsIgual(seq2)){
+			System.out.println("Son iguals");
+		}else{
+			System.out.println("Son diferents");
+		}
+	}
+	
+}
+		
+		
+		
+			
+		
+		

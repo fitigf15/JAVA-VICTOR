@@ -1,0 +1,212 @@
+ 
+                     **********************
+                     * Demostració de VIM *
+                     **********************
+
+Interrogants bàsics ========================================
+
+	* Què conté aquest document? *
+
+- l'objectiu d'aquest document és destacar l'interès de conèixer i saber usar vim (fet que no contradiu que conegueu i useu altres editors)
+-- l'estructura consta de (1) unes respostes breus a interrogants bàsics del nouvingut a vim i (2) unes indicacions bàsiques per entendre i practicar amb la potència d'aquest editor.
+-- aquest document doncs, no pretén ser una guia completa de comandes i ús de vim.
+--- és més, no s'expliquen ni es mostren la majoria de comandes bàsiques, sinó més aviat aquelles que poden cridar l'atenció i ser pràctiques alhora de programar.
+--- per tant, caldrà que consulteu altres guies complementàries de vim.
+
+
+	* Quina importància té conèixer vim? *
+
+- és un editor disponible en mode text (també existeix amb interfície gràfica: gvim)
+-- fet que el fa interessant per quan pugueu accedir remotament a una màquina en mode text
+-- i imprescindible si no podeu accedir en mode gràfic (també existeixen altres editors alternatius en mode text, ex: emacs, nano).
+-- de fet, sovint, encara que tingueu accés gràfic, us interessarà usar el mode text si només heu de fer petits canvis, ja que la connexió remota és molt més ràpida.
+-- a més, moltes tecles/comandes de vim s'usen en altres comandes de Linux (així que tard o d'hora, començareu a descobrir que aquest nou llenguatge us serveix per a fer moltes altres coses).
+
+
+	* Quina dificultat té conèixer vim? *
+
+- la corba d'aprenentatge és molt pronunciada (costa molt iniciar-se)
+-- de tal manera que és imprescindible practicar amb ell abans de trobar-se amb la situació d'haver-lo d'usar per necessitat (accés només textual a una màquina remota)
+
+
+	* Quin interès té usar vim per a programar? *
+
+- és un editor de text (més adient per a text pla) enlloc d'un processador de text (més adient per a text amb format)
+-- per a programar no necessitem text amb format
+- té les eines habituals dels editors de programes, ex: ressaltat de sintaxi
+-- té opcions avançades d'edició que faciliten la manipulació del text, ex: selecció/inserció/esborrat vertical
+--- aquest document pretén ser una introducció ràpida a aquestes característiques
+- l'ús del teclat per a comandar l'ordinador (i en aquest cas l'editor vim) és molt més ràpid que l'ús del ratolí
+-- encara que al principi us pugui costar més per la desconeixença de les comandes, en el moment que tingueu pràctica anireu molt més ràpid editant quan no separeu les mans del teclat, que si contínuament heu d'anar a agafar el ratolí.
+-- fins i tot existeix la possibilitat d'usar totes les comandes que aprengueu en altres editors "convencionals" (ex. Eclipse té mode vim: http://marketplace.eclipse.org/content/viplugin )
+
+
+	* Com puc aprendre vim? *
+
+- Tutorial per defecte: executeu 'vimtutor' a la línia de comandes (sense la cometa inicial ni final!)
+- Mode gràfic: executeu vim en mode gràfic teclejant 'gvim' a la línia de comandes
+-- aquesta versió de l'editor és una barreja entre el que segurament ja coneixeu dels editors gràfics (menús, barres d'eines, situar el punt d'inserció amb el ratolí, rodeta del ratolí...) i les comandes vim que es poden usar a la versió text (podeu entrar qualsevol comanda de vim no gràfic)
+-- l'avantatge de cara a aprendre, és que al costat de les entrades del menú, hi ha "la xuleta" de la comanda en text.
+--- [PROVA-HO] executa 'gvim', obre el menú 'Fitxer' i observa "les xuletes" a la dreta de cada opció.
+--- la majoria de comandes són abreviacions de paraules en anglès, així que val la pena conèixer què signifiquen per facilitar la seva memorització.
+
+
+	* Com provar els exemples que hi ha a continuació? *
+
+- donat el caràcter introductori i motivador d'aquest document, es recomana provar els exemples amb la versió gràfica 'gvim'. D'aquesta forma, podeu "tafanejar" les opcions a través dels menús i usar el ratolí per a situar-vos en diversos punts.
+-- tan mateix, no oblideu:
+--- anar fent una ullada a "la xuleta" de les comandes que escolliu als menús
+--- anar aprenent com situar-vos en diversos punts usant el teclat enlloc del ratolí.
+-- Recordeu que tots els exemples funcionen indistintament tant amb 'vim' com amb 'gvim', així que es recomana provar-los també amb 'vim' un cop els hàgiu entès.
+
+
+Practiquem =================================================
+
+	* Com entrar i sortir? *
+
+- executa 'vim' (o 'gvim') des de la línia de comandes i s'obrirà el programa
+
+- tecleja ':e fitxer.txt' per editar el fitxer anomenat 'fitxer.txt'
+-- també pots obrir l'editor i un fitxer posant el nom a continuació 'vim fitxer.txt'
+-- també pots obrir més d'un fitxer alhora en diferents pestanyes 'vim -p fitxer1.txt fitxer2.txt'
+--- [PROVA-HO] executa 'gvim -p f1 f2' 
+--- [PROVA-HO] prem CTRL+ALT+AV_PAG o CTRL+ALT+RE_PAG per veure com canviar de pestanya
+
+- prem 'i' per passar al mode inserció
+-- veuràs que a la part inferior de la finestra indica aquest mode
+-- ara ja pots introduir text, tot i usant les tecles convencionals (cursors, ins, supr, inici, fi...); existeixen tecles alternatives per quan no tingueu aquestes a disposició.
+-- [PROVA-HO] prem 'i' i modifica part del text; prova totes les tecles convencionals.
+
+- prem 'ESC' per sortir del mode inserció i entrar al mode comanda.
+-- veuràs el canvi a la part inferior de la finestra
+-- en aquest mode podràs entrar diferents comandes que veuràs posteriorment (ex. totes les que comencen per dos punts ':')
+-- [PROVA-HO] prem 'ESC' per poder teclejar la comanda que hi ha a continuació.
+
+- tecleja ':wq' per gravar (write) i sortir (quit)
+-- [PROVA-HO] prem ':wq'
+-- també podeu sortir sense gravar teclejant ':q' (quit)
+-- i sinó us deixa perquè heu fet canvis, podeu insistir teclejant ':q!'
+
+
+	* Edició bàsica d'un programa *
+
+- a continuació teniu el codi d'un programa d'exemple:
+
+// Programa exemple per practicar
+public class Longitud {
+	public static void main (String [] args) {
+		double radi = 1.; double diametre = radi * 2.;
+	
+		System.out.println("La longitud d'una circumferència de radi " + radi + " és " + 2. * Math.PI * radi);
+		System.out.println("L'àrea d'un cercle de radi " + radi + " és " + Math.PI * radi * radi);
+	}
+}
+
+- [PROVA-HO] en mode comanda tecleja ':syntax on' per activar el ressaltat en colors
+-- aquesta comanda detecta el llenguatge usat a través de l'extensió del fitxer, així que en aquest fitxer '.txt' no sabrà que el fragment anterior està en java
+-- [PROVA-HO] tecleja ':setf java' per indicar-li que vols el ressaltat sintàctic del llenguatge java (això no et caldrà fer-ho habitualment, perquè ja detectarà el llenguatge automàticament)
+- [PROVA-HO] ':set nu' activa la numeració de línia (numbering)
+-- [PROVA-HO] ':set nonu' la desactiva
+-- la major part de comandes es poden desactivar posant no al davant
+- [PROVA-HO] ':set ts=12' canvia la mida dels tabuladors (tab stop)
+- [PROVA-HO] ':set nowrap' fa que les línies llargues no es mostrin a sota (wrap), sinó continuant a la dreta de la pantalla (nowrap).
+- en Linux, copiar és tan fàcil com seleccionar amb el ratolí (no és necessari fer CTRL+C) i enganxar es fa prement el botó del mig del ratolí (enlloc de CTRL+V)
+-- això fa l'operació de copiar i enganxar molt més ràpida
+-- [PROVA-HO] Ara veurem copiar&enganxar bàsic
+--- 1. selecciona la paraula 'main' del programa (ho pots fer, fent un doble clic sobre qualsevol part de la paraula)
+--- 2. situa el punter de ratolí a la línia en blanc que hi ha al mig del programa (només desplaça el ratolí, no facis clic)
+--- 3. prem el botó del mig del ratolí (o la rodeta) per enganxar el text
+--- 4. prem 'ESC' i després 'u' per desfer aquesta inserció (undo)
+- [PROVA-HO] Ara veurem retallar&enganxar de línies senceres
+-- 1. situat sobre una línia del programa on s'imprimeix la longitud
+-- 2. prem 'dd' (en mode comanda) per esborrar-la (delete)
+-- 3. prem 'yy' per enganxar-la (yank)
+
+
+	* Dividir la pantalla *
+
+- A part d'usar pestanyes per editar més d'un fitxer simultàniament, vim permet la "partició" de la pantalla per a veure'ls alhora (hi ha pocs editors que puguin fer això)
+-- [PROVA-HO] en mode comanda tecleja ':sp' i veuràs com la pantalla es divideix en dos parts mostrant-te el mateix fitxer (split)
+--- també pots fer ':sp fitxerSecundari.txt' per obrir un altre fitxer en la nova divisió
+-- [PROVA-HO] en mode comanda podeu prémer CTRL+W i després cursor Amunt/Avall per desplaçar-vos entre divisions verticals
+--- aleshores podeu moure-us a diferents parts del fitxer en cada divisió
+--- [PROVA-HO] a la divisió superior mostra la part del fitxer en la que es veu el codi java i a la part inferior aquesta línia
+--- [PROVA-HO] prova de seleccionar 'public class Longitud' de la divisió superior i enganxar-la darrere aquesta línia a la divisió inferior.
+-- [PROVA-HO] tecleja ':vs nou.txt' i veuràs com la pantalla es divideix verticalment (vertical split)
+--- [PROVA-HO] prem CTRL+W i després cursorDreta/Esquerra per desplaçar-vos entre divisions horitzontals
+--- [PROVA-HO] situat a la nova divisió (la que està buida, ja que el fitxer nou.txt no existia) i tecleja ':e .' per iniciar l'edició (edit) sense especificar un fitxer, sinó el directori actual ('.'); aleshores podràs desplaçar-te verticalment i triar quin fitxer vols editar.
+-- per tancar una divisió, n'hi ha prou amb teclejar ':q' (quit = sortir) o ':wq' (guardar el canvis i sortir)
+-- [PROVA-HO] situat sobre la darrera divisió (amb CTRL+W i les tecles del cursor) i tanca-la (amb ':q')
+-- al gvim podeu:
+--- usar el ratolí per anar d'una divisió a una altra (punxant sobre la que volgueu escollir)
+--- usar el ratolí per redimensionar les divisions (punxant i arrossegant la franja divisòria)
+--- veure totes "les xuletes" relacionades amb les divisions de finestres al menú Finestra, per així poder-les usar al vim sense interfície gràfica.
+
+
+	* Edició avançada d'un programa *
+
+- [PROVA-HO] Anem a moure'ns ràpidament pel codi
+-- en mode comanda prem 'w' per saltar endavant de paraula en paraula (word) i 'b' per a fer-ho endarrere (back)
+-- situat sobre un parèntesi o una clau del codi java i prem '%' per saltar a la seva parella.
+-- situat sobre la primera aparició de 'radi' i prem '*' per cercar una altra aparició de la mateixa paraula
+- [PROVA-HO] Anem a mostrar els blocs vertical (hi ha molt pocs editors que puguin fer això)s
+--  1. situat sobre la primera aparició de 'out' al programa (sobre la 'o' del primer System.out)
+--  2. prem 'CTRL+V' per iniciar la selecció vertical
+--  3. desplaçat a la dreta amb els cursors fins a seleccionar tota la paraula 'out'
+--  4. desplaçat una línia cap avall amb el cursor, per a seleccionar les dues paraules 'out' alhora en vertical.
+--  5. prem la tecla 'Supr' i veuràs com s'esborra el bloc vertical
+--  6. prem les tecles 'gv' per tornar a seleccionar la regió que havies seleccionat anteriorment (un requadre vertical)
+--  7. prem 'I' per activar la inserció vertical (encara hi ha menys editors que puguin fer això)
+--  8. tecleja 'err' i prem 'ESC' per realitzar la inserció simultània en vertical
+--  9. situat a la primera línia del programa (la que diu 'public class...')
+-- 10. prem 'CTRL+V' per iniciar la selecció vertical
+-- 11. desplaçat cap avall fins al final del programa
+-- 12. prem 'I' per activar la inserció vertical
+-- 13. prem la tecla tabulador i després 'ESC' per indentar de cop totes les línies seleccionades
+-- aquesta funcionalitat és molt pràctica per modificar múltiples línies de codi que tenen parts en comú (declaracions de variables a les que s'ha d'afegir un prefix, indentar/desindentar codi...)
+
+
+
+	* Recomanació *
+
+- creu-vos un fitxer al vostre "directori casa" anomenat '.vimrc' amb les opcions personals que sempre vulgueu tenir actives (s'han d'inserir sense els dos punts inicials ':'), ex:
+
+syntax on
+set paste
+set nu
+set ru
+set nowrap
+set ts=4
+
+- aquest fitxer de configuració s'executarà cada cop que obriu el vim, i així no caldrà "reconfigurar-lo" al vostre gust.
+
+
+
+Final ======================================================
+
+Fins aquí la demostració inicial fins arribar a veure algunes coses específiques de vim. Esperem que trobeu l'interès a aprendre també (amb independència que l'useu normalment o no) vim. Recordeu que us cal practicar, altrament, el dia que el necessiteu tindreu massa a feina a fer: (1) solucionar el problema que heu de solucionar (2) aprendre com va el vim per a poder-ho fer ; )
+
+No us oblideu de mirar altres introduccions, tutorials, tafanejar els menús de gvim... i així podreu aprendre altres prestacions avançades. Us deixo algunes pistes:
+
+- Compila el fitxer= :! javac codi.java
+- Anar a una línia determinada del fitxer= :9
+- Anar al final del fitxer(go)= G
+- Esborra des del cursor fins a final de línia(delete)= D
+- Selecciona línies senceres(visual)= V
+- Cerca= /Final
+- Cerca i Reemplaça(search)= :%s/double/int/gc
+- Repeteix una comanda= 3dd
+- Guarda el programa resaltat en colors en HTML= :TOHtml
+- Activa els plecs de codi (es pleguen i es despleguen al prèmer espai)=
+:set foldenable
+:set fdm=indent
+:nnoremap <space> za
+
+
+http://www.tiraecol.net/modules/comic/cache/images/tiraecol-38.png
+http://retrazos.pe/img/emacs-vim.jpg
+http://www.tiraecol.net/modules/comic/cache/images/tiraecol-3.jpg
+http://www.vim.org/images/0xbabaf000l.png
+
+http://elcofrecito.net/wp-content/uploads/2008/02/vi-vim_cheat_sheet.gif
+

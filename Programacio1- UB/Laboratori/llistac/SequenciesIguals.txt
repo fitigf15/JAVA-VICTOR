@@ -1,0 +1,8 @@
+El problema d'avui era detectar si dues seqüencies d'enters son iguals. Al
+principi l'usuari dona el numero d'enters que entrarà. Poden estar els
+numeros desordenats i poden estar repetits. en el cas que estiguin
+repetits han d'estar igualment repetits en les dues sequencies. Ho varem
+plantejar a classe sense taula de freqüencies, si te'n recordes.
+
+public class SequenciesIguals{
+	public static void main(String[]args)

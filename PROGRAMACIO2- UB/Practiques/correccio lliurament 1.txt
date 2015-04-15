@@ -1,0 +1,13 @@
+No cal definir el Scanner sc al main ho pots fer al mètode gestioMenuPrincipal.
+
+La variable Menu no cal definir-la com atribut i no cal instanciar-la en el constructor, ho pots fer dins del mètode gestioVisorUB.
+
+Totes les preguntes per pantalla s’han de fer a les classes del paquet vista. Per tant, no és correcte que utilitzes el Scanner dins del constructor de la classe Imatge.
+
+Falta sobreescriure el mètode toString en les classes Imatge, TaulaImatges i LlistaImatges. Aquest mètode s’utilitzarà en l’opció del menú de mostrar llista.
+
+En la classe LListaImatges, el mètode removeImage no necessita el bucle while.
+
+En la classe Imatge, has de sobreescriure el mètode equals definit a la classe Object tal com indiquem a l’enunciat.
+
+Completa els comentaris JavaDoc. Falten els comentaris de la classe abans de @author.

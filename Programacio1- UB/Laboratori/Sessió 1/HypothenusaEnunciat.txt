@@ -1,0 +1,61 @@
+Introducció a l'Editor Vi i a Linux
+
+    Descarregueu el fitxer 04-ExerciciLinuxVi-Hypothenusa.txt dels dossiers i deseu-lo al vostre directori arrel personal.
+
+    Al fitxer 04-ExerciciLinuxVi-Hypothenusa.txt hi ha un petit programa escrit en llenguatge Java (amb alguns errors), envoltat de text en català. Canvieu doncs el nom del fitxer a Hypothenusa.java
+
+    Esborreu la darrera línia escrita en català.
+
+    Esborreu les tres primeres línies escrites en català.
+
+    Per error, el programador va posar dos punts al final de cada línia del programa. Però, al final de cada línia d'un programa Java hi ha d'haver un punt i coma. Substituïu tots els dos punts per punts i coma.
+
+    Sortiu de l'editor Vi, i compileu el programa.
+
+    Executeu el programa.
+
+    Torneu a editar el fitxer i aquest cop sortiu momentàniament del vi per compilar i executar. En acabat retorneu al vi.
+
+    Copieu el fitxer Hypothenusa.java a un altre fitxer anomenat Hypo.java
+
+    Obriu el nou fitxer amb el Vi, i substituïu totes les aparicions de float per double.
+
+    Cerqueu la línia on apareix la comanda sqrt.
+
+    Dupliqueu la línia.
+
+    Situeu-vos al final d'aquesta línia copiada, i després a l'inici.
+
+    Desplaceu-vos de paraula en paraula fins al parèntesi d'obertura després d'sqrt.
+
+    Porteu el cursor directament sobre el parèntesi que tanca aquest que estava obert, després torneu-lo al parèntesi d'obertura.
+
+    Desplaceu el cursor a l'espai en blanc darrere el parèntesi d'obertura, i esborreu de cop tots els caràcters fins al signe de suma.
+
+    Retrocediu de paraula en paraula fins al mot float de la mateixa línia.
+
+    En mode de selecció visual, marqueu tota la paraula float i seguit fins la paraula Math inclosa i esborreu-les.
+
+    Esborreu de cop la paraula sqrt.
+
+    Indiqueu al Vi que indenti automàticament.
+
+    Poseu-vos en mode d'inserció al final de línia, premeu return i afegiu el següent codi: System.out.println("hipotenusa calculada");
+
+    Canvieu el nom de totes les variables que comencen per catet per a que comencin per costat.
+
+    Esborreu totes les línies en blanc.
+
+    Esborreu la línia 12.
+
+  ------------------- Copieu les línies 9 i 10 i afegiu-les darrera la línia 11.
+
+    Afegiu els caràcters // davant de totes les línies.
+
+    Desfeu la darrera acció.
+
+    Sortiu del Vi. Creeu un directori nou anomenat final i situeu-vos en ell.
+
+    Copieu tots els fitxers que heu fet servir en aquesta pràctica en aquest nou directori.
+
+    Llisteu tots els fitxers acabats en java. Primer per pantalla.

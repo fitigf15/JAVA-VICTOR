@@ -1,0 +1,32 @@
+/*FET PER: VICTOR GOMEZ FARRUS*/
+
+import java.util.Collections;
+
+public class Sequencia{
+	private int[] taula,taula2;
+	private int numzeros=0,numelements=0;
+	private boolean iguals=true;
+	
+	public void SetLlarg(int n){
+		taula=new int[n];
+	}
+	public void AppendNum(int numero,int posicio){
+		taula[posicio]=numero;
+		numelements++;
+	}
+	public int[] GetTaula()		{return taula;}
+	public int GetNumElements()	{return numelements;}
+	public boolean Esigual(Sequencia a){
+		taula2=a.GetTaula();
+		Collections.sort(taula);
+		Collections.sort(taula2);
+		if (numelements==a.GetNumElements()){
+			for (int i=0;((i<numelements)&&(iguals));i++){
+				iguals=(taula[i]==taula2[i]);
+			}
+		}else{return false;}
+		
+	}
+}
+
+			

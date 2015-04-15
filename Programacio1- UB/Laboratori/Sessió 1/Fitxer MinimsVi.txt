@@ -1,0 +1,60 @@
+ Minims Vi
+Programacio I
+UB
+
+1. Entrar, canviar de mode (d'escriptura a comandes i viceversa), desar i sortir
+
+    vi nom_fitxer ............... Edita el fitxer de nom nom_fitxer
+    i .................................... Passa de mode de comandes a mode d'escriptura
+    Esc ................................Passa de mode d'escriptura a mode de comandes
+    :wq .........................Surt desant les modificacions
+    :q!............................Surt sense desar les modificacions
+    :w........................... Desa les modificacions
+    :q............................Surt (si ja hem desat previament)
+    :help ..................... Mostra l'ajuda sobre la comanda
+
+2. Comandes utils i de preferencies
+
+    :set ai........................... Activa l'autoindentacio
+    :set noai...................... Desactiva l'autoindentacio
+    :set nu .........................Activa els numeros de linia
+    :set nonu..................Desactiva els numeros de linia
+    :set syntax on ....... Activa la sintaxi en colors
+    :set paste .............. Activa el mode "enganxar"
+    :iab abrev. equivalencia ..... Defineix una abreviatura
+    u............................... Desfa l'ultim canvi
+
+3. Comandes d'esborrar i copiar
+
+    dd ...........................Esborra la linia del cursor, copiant-la al buffer
+    ndd .........................Esborra n linies des del cursor
+    yy ........................... Copia la linia del cursor al buffer
+    nyy ..........................Copia n linies des del cursor al buffer
+    p .............................Insereix el contingut del buffer a la linia sota el cursor
+
+4. Comandes de moviment
+
+    G .............................Mou el cursor fins a l'ultima linia del fitxer
+    nG ............................Mou el cursor fins a la linia n del fitxer
+    0 .............................Mou el cursor fins a l'inici de la linia
+    $ ............................Mou el cursor fins al final de la linia 
+
+5. Comandes de cerca i substitucio
+
+    /tira.................................Cerca la cadena de caracters tira del cursor en endavant (quan arriba al final del fitxer continua pel principi)
+    n.......................................Repeteix l'ultima cerca
+    * ....................................... Cerca la seguent paraula com la que hi ha sota el cursor
+    %......................................Cerca la parella del parentesi (,[,{,},],) sota el cursor
+    :[lin]s/tira1/tira2/[g][c] .... Substitueix, a les linies indicades per lin, les aparicions de tira1 per tira2. Si no especifiquem lin nomes ho fa a la linia on es troba el cursor. Si no posem g nomes substitueix una aparicio per linia i, si ho posem, les fa totes. Si posem c ens demana confirmacio per a cada substitucio i, si no, les substitueix totes sense preguntar. L'opcio lin pot ser:
+
+    n,m.....................des de la linia n a la linia m
+    % ........................totes les linies del fitxer
+    n...........................linia n
+    $ .........................ultima linia del fitxer
+
+EXEMPLES
+* :s/vell/nou................Substitueix vell per nou a la linia del cursor, una vegada
+* :s/vell/nou/g............Substitueix totes les aparicions de vell per nou a la linia del cursor
+* :%s/vell/nou/g ......Substitueix totes les aparicions de vell per nou a tot el fitxer
+
+

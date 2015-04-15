@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html><head>
+<title>Segona llista de programes proposats (curs 2012-2013)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><meta http-equiv="CONTENT-TYPE" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body>
+<h1>Col·lecció de problemes B: Recorregut i cerca
+<br></h1>
+<h2>Laboratori - Programació  I</h2>
+<h3>Grau d'Enginyeria Informàtica - UB</h3>
+
+<p style="margin-left: 0.5in; margin-right: 1.53in; margin-top: 0.07in; margin-bottom: 0.08in">
+<font style="font-size: 13pt" size="3"><span lang="ca-ES"><b>* En tots
+els problemes: </b></span></font><span lang="ca-ES">utilitzant
+comentaris </span><tt class="western"><span lang="ca-ES">/* ... */</span></tt>
+<span lang="ca-ES">heu </span><font color="#000000"><span lang="ca-ES">d'indicar
+per a cada iteració de la solució proposada </span></font><font color="#000000"><span lang="ca-ES"><b>la
+caracterització de la seqüència</b></span></font><font color="#000000">
+</font><font color="#000000"><span lang="ca-ES">i </span></font><font color="#000000"><span lang="ca-ES"><b>la
+identificació de l'esquema algorísmic utilitzat.</b></span></font></p>
+
+<ol>
+<li> Escriviu un programa que llegeixi una frase acabada amb la
+ paraula <b><tt class="western">fi</tt></b>
+ i imprimeixi per pantalla el nombre de paraules que  conté. 
+
+(<b>ComptaParaules.java</b>)
+</li><br>
+
+<li>
+Feu un programa que vagi llegint números positius fins a llegir 
+<b><tt class="western">-1</tt></b>
+ i ens digui si hi ha més números parells o més
+múltiples de 3.
+(<b>ParellsIMultiples3.java</b>)
+</li><br>
+
+<li>
+Feu un programa que vagi llegint números positius fins a llegir 
+<b><tt class="western">-1</tt></b>
+ i ens digui si hi ha algun múltiple de 3 parell.
+(<b>Multiple3Parell.java</b>)
+</li><br>
+
+<li>
+Indiqueu si dos nombres són iguals en la seva suma de dígits.
+(<b>DigitsIguals.java</b>) <br>
+<font size="2">
+ Per exemple, per l'entrada "1234 64" la sortida serà
+"Els dígits sumen igual: 10" </font>
+</li>
+<br>
+
+<li>
+Feu un programa que donats dos nombres enters positius, escrigui
+totes les posicions en que tenen xifres iguals, indicant aquesta xifra.
+(<b>Xifres.java</b>) <br>
+<font size="2">
+Per exemple, per 7423 i 7125 la sortida serà:<br>
+  A la posició 2 es repeteix la xifra 2.<br>
+  A la posició 4 es repeteix la xifra 7.</font>
+</li><br>
+
+<li>
+Escriviu un programa que donats dos nombres enters positius
+indiqui si el més petit està contingut dins el més gran.
+(<b>NumFill.java</b>)<br>
+<font size="2">
+ Per exemple, si tenim l'entrada "1234 12345678"
+ la sortida
+serà "el nombre 1234 està contingut en el 12345678".
+</font>
+</li><br>
+
+<li>
+Feu un programa que, donat un nombre real
+<tt>x</tt> i un nombre real positiu &#949;, amb &#949; &lt; 1.e-3
+(tolerància),
+calculi el valor de e<sup>x</sup> emprant la
+sèrie <br>
+<center>
+e<sup>x</sup> = 1 + x/1! + x<sup><small>2</small></sup>/2! + 
+x<sup><small>3</small></sup>/3! + ... + x<sup><small>n</small></sup>/n! + ...
+</center>
+ i s'aturi en trobar un valor n 
+tal que |x<sup><small>n</small></sup>/n!| &lt; &#949;. <br>
+Optimitzeu el nombre de càlculs utilitzats. 
+Compareu el vostre resultat amb el que dóna el mètode 
+incorporat. (<b>CalculExpo.java</b>)
+</li><br>
+
+<li>
+Feu un programa que, donats un número real
+<b><tt class="western">a</tt></b>  i una tolerància
+<b><tt class="western">&#949;</tt></b>,
+calculi
+<b>
+<tt class="western">
+<span style="tt white-space: nowrap; font-size:105%">
+&#8730;<span style="text-decoration:overline;font-size:95%">a</span>
+</span>
+</tt></b>
+mitjançant el mètode de Newton.
+(<b>arrelQuadNewton.java</b>)
+<br>
+
+El mètode de Newton serveix per trobar un zero d'una
+funció real d'una variable real derivable <tt>f</tt>,
+és a dir, una solució de l'equació <tt>f(x) = 0</tt>.
+
+Donada una aproximació inicial <tt>x<sub>0</sub></tt> es genera una
+successió de valors <tt>x<sub>n</sub></tt>,
+definida per <br>
+<br>
+<center>
+x<sub>n+1</sub> = x<sub>n</sub> - f(x<sub>n</sub>) / f'(x<sub>n</sub>)
+,&nbsp; n=0,1, ...
+</center>
+<br>
+que aturareu en trobar un valor <tt>k</tt> tal que
+|x<sub>k</sub> - x<sub>k-1</sub>| &lt; &#949;.
+<br>
+
+En el nostre cas (<tt>f(x)= x<sup>2</sup>-a</tt>),
+la successió generada ve definida per <br>
+<br>
+<center>
+x<sub>n+1</sub> = 1/2 · (x<sub>n</sub> + a/x<sub>n</sub>),&nbsp; n = 0, 1,...
+</center>
+</li><br>
+
+<li>
+El joc del <a href="http://ca.wikipedia.org/wiki/D%C3%B2mino">dòmino</a> consisteix en anar encadenant fitxes numèriques.
+ Llegiu els
+dos nombres que estan sobre la taula per completar i cinc
+fitxes de dòmino i digueu si l'usuari pot tirar almenys dues fitxes.
+(<b>TirarDomino.java</b>)<br>
+<font size="2">
+Per exemple, si l'entrada és "45 00 13 11 55 34"
+la resposta ha de ser "Sí pot".
+</font>
+</li><br>
+
+<li>
+Donat un conjunt de 5 fitxes de dòmino, indiqueu si el jugador té
+algun doble i imprimiu-los tots. (<b>DoblesDomino.java</b>)
+</li><br>
+
+<li>
+ Donat un conjunt de 5 fitxes de dòmino, indiqueu si el jugador té
+ algun doble i imprimiu el primer. (<b>PrimerDoble.java</b>)
+</li><br>
+
+<li>
+  En una partida de dòmino quan algú acaba les fitxes cal que la
+  resta de jugadors comptin el valor de les seves fitxes per
+  anotar puntuacions. Feu un programa que, donada una llista de
+fitxes acabada en la fitxa 77, calculi la puntuació del jugador
+en qüestió, sumant els nombres de totes les fitxes, recordant que
+les fitxes dobles compten doble. (<b>PuntuacioDomino.java</b>).
+</li><br>
+
+<li>
+Feu un programa que escrigui la descomposició
+ en factors primers d'un nombre llegit per teclat.
+(<b>Primers.java</b>) <br>
+<font size="2">
+Per exemple, si llegiu "60" escriurà "2 2 3 5".
+</font>
+</li><br>
+
+<li>
+Definim una successió de nombres reals de la forma següent:
+<br>
+donats x<sub><small>0</small></sub>, x<sub><small>1</small></sub>
+<br>
+x<sub><small>k</small></sub> = ax<sub><small>k-1</small></sub> +
+ bx<sub><small>k-2</small></sub>, k &#8805; 2,
+<br>
+on a, b són paràmetres reals.
+<br>
+
+Feu un programa que
+llegeixi a, b, n, x<sub><small>0</small></sub> i x<sub><small>1</small></sub>,
+calculi els termes de la successió  fins a x<sub><small>n</small></sub>,
+així com la successió de quocients de termes
+consecutius
+x<sub><small>k</small></sub>/x<sub><small>k-1</small></sub>
+ (sempre que existeixi el quocient).
+ (<b>Successio.java</b>)
+
+<br>
+Escriurà l'índex (k), l'element de la successió
+(x<sub><small>k</small></sub>),
+ i, si existeix, el quocient
+(x<sub><small>k</small></sub>/x<sub><small>k-1</small></sub>).
+<br>
+
+<font size="2">
+Per exemple: Si a = 2., b = -2.,
+  n = 6, x<sub><small>0</small></sub> = 1. i 
+x<sub><small>1</small></sub> = 2., el programa escriurà 
+<br>
+<center>
+<table style="font-size:95%" frame="VOID" rules="NONE" border="0" cellspacing="0" cols="4">
+<colgroup><col width="36"><col width="36"><col width="20"><col width="36"></colgroup>
+	<tbody>
+		<tr>
+			<td align="left">k</td>
+			<td>xk</td>
+			<td>  </td>
+			<td align="left">quoc</td>
+		</tr>
+		<tr>
+			<td sdval="0" sdnum="3082;" height="17">0</td>
+			<td sdnum="3082;0;@">   1.0</td>
+			<td> </td>
+		</tr>
+		<tr>
+			<td sdval="1" sdnum="3082;" height="17">1</td>
+			<td sdnum="3082;0;@">  2.0 </td>
+			<td>   </td>
+			<td sdnum="3082;0;@" align="left">    2.0</td>
+		</tr>
+		<tr>
+			<td sdval="2" sdnum="3082;" height="17">2</td>
+			<td sdnum="3082;0;@">  2.0 </td>
+			<td>   </td>
+			<td sdnum="3082;0;@">   1.0</td>
+		</tr>
+		<tr>
+			<td sdval="3" sdnum="3082;" height="17">3</td>
+			<td>  0.0 </td>
+			<td>   </td>
+			<td>   0.0</td>
+		</tr>
+		<tr>
+			<td sdval="4" sdnum="3082;" height="17">4</td>
+			<td>  -4.0</td>
+			<td>   </td>
+			<td><br></td>
+		</tr>
+		<tr>
+			<td sdval="5" sdnum="3082;" height="17">5</td>
+			<td>  -8.0</td>
+			<td>   </td>
+			<td sdnum="3082;0;@">   2.0</td>
+		</tr>
+		<tr>
+			<td sdval="6" sdnum="3082;" height="17">6</td>
+			<td>  -8.0</td>
+			<td>   </td>
+			<td sdnum="3082;0;@">   1.0</td>
+		</tr>
+	</tbody>
+</table>
+</center>
+</font>
+</li><br>
+
+<li> 
+Feu un programa que llegeixi una frase acabada amb la paraula
+<b><tt class="western">fi</tt></b>
+i sumi tots els dígits que hi apareixen i indiqui la suma total
+i el nombre de dígits. (<b>SumaDigits.java</b>) <br>
+
+<font size="2">
+Per exemple: si la cadena introduïda és: "En Joan tenia 4
+germanes i 3 gallines fi", la
+sortida serà "Nombre dígits=2 Suma
+dígits=7"</font><br>
+<br>
+
+</li><li>
+Indiqueu si una paraula entrada per l'usuari és o no palíndrom
+(capicua) imprimint "és capicua" si ho és o
+"no és capicua" en cas contrari. (<b>Palindrom.java</b>)
+</li><br>
+
+<li>
+Un algorisme d'encriptació consisteix en reemplaçar cada lletra
+per la lletra que està <tt>n</tt> posicions més endavant en
+l'alfabet. Escriviu un programa que 
+llegeixi un nombre <b><tt class="western">n</tt></b>
+(<tt>1 &#8804; n &#8804; 9</tt>) i, paraula a paraula, una frase
+acabada amb la paraula <b><tt class="western">fi</tt></b> i imprimeixi el resultat de xifrar mitjançant
+aquest algorisme desplaçant <tt>n</tt> caràcters.
+(<b>EncriptarRotN.java</b>)<br>
+</li><br>
+
+<li>
+ Seguint el model d'encriptació de l'exercici anterior, es
+demana fer un programa que demani una paraula encriptada i el nombre
+<tt>n</tt>, i una paraula no encriptada, i imprimeixi 
+<b><tt class="western">true</tt></b> o
+<b><tt class="western">false</tt></b>
+segons si les paraules són o no coincidents.
+(<b>DesencriptarRotN.java</b>)
+</li><br>
+
+<li>
+  Volem fer unes petites estadístiques sobre un cert
+  col·lectiu, del qual tenim per a cadascuna de les
+  persones dues dades, l'edat i el sexe. L'edat ve donada per un
+nombre enter positiu, el sexe serà 
+<b><tt class="western">H</tt></b> (home) o
+<b><tt class="western">D</tt></b> (dona).
+El programa anirà llegint dades (primer l'edat de la persona),
+fins que l'usuari introdueixi una edat menor o igual que zero. El
+programa escriurà el nombre total de persones del
+col·lectiu, el nombre d'homes, quants d'aquests són
+majors de 45 anys i la mitjana d'edats d'aquests últims i, el
+nombre de dones, quantes d'aquestes són menors d'edat i la
+mitjana d'edats de totes les dones. (<b>Estadistica.java</b>)
+</li><br>
+
+<li>
+Volem fer un programa que calculi el resultat d'una travessa de
+futbol donats els resultats d'una jornada. Feu un programa que
+rebi el nombre de partits i els resultats en el format
+"5 4-0 1-2 1-1 0-0 2-0" i retorni el resultat de la travessa 
+"1 2 X X 1". (<b>Travessa.java</b>)
+</li><br>
+
+<li>
+Donada una travessa guanyadora amb 15 resultats i una travessa
+segons el format de l'exercici anterior, feu un programa que
+escrigui si ha fet un ple al quinze. (<b>TravessaGuanyadora.java</b>)
+</li><br>
+
+<li>
+  Volem fer unes petites estadístiques sobre un club
+  esportiu, del qual tenim per a cadascun dels atletes dues
+  dades, el sexe i la marca que pot saltar l'atleta amb perxa. El
+  sexe serà una cadena amb valor
+<b><tt class="western">home</tt></b> o
+<b><tt class="western">dona</tt></b>.
+La marca de perxa serà un nombre (enter
+  positiu) de centímetres que pot saltar l'atleta amb perxa. La
+  introducció de dades finalitzarà quan l'usuari introdueixi
+ una cadena diferent de
+<b><tt class="western">home</tt></b> o
+<b><tt class="western">dona</tt></b>.
+El  programa escriurà: el nombre total d'atletes, el nombre
+  d'homes, quants salten més de 2 metres i la mitjana d'aquests
+  salts (en metres), el nombre de dones, la mitjana de salt (en
+  metres) de totes i la millor marca femenina.
+  (<b>Atletes.java</b>)
+</li><br>
+
+<li>
+L'algorisme d'Euclides és un mètode eficaç
+per a calcular el
+màxim comú divisor (mcd) entre dos nombres enters
+(<a href="http://es.wikipedia.org/wiki/Algoritmo_de_Euclides">http://es.wikipedia.org/wiki/Algoritmo_de_Euclides</a>).
+L'algorisme consisteix en fer successives divisions enteres.
+En la primera divisió, es pren com a dividend el
+major dels números i com a divisor l'altre. Després, el
+divisor i el residu serveixen respectivament de dividend i
+divisor de la següent divisió. El procés acaba quan
+s'obté un residu nul. El mcd és llavors el darrer divisor
+de l'algorisme.
+Feu un programa que llegeixi dos números i ens digui el seu
+màxim comú divisor i el seu mínim comú
+múltiple. (<b>Euclides.java</b>)
+</li><br>
+
+<li>
+Dos nombres són amics si la suma dels divisors propis del primer
+és igual al segon i la suma dels divisors propis del segon és
+igual al primer. Feu un programa que calculi si dos nombres
+enters donats són nombres amics. (<b>Amics.java</b>)<br>
+
+<font size="2">
+Per exemple, 220 i 284 són amics ja que
+els divisors propis de 220 són 1, 2, 4, 5, 10, 11, 20, 22, 44,
+55 i 110, que sumen 284, i,
+els divisors propis de 284 són 1, 2, 4, 71 i 142, que sumen 220.
+</font>
+</li><br>
+
+<li>
+Un número es considera múltiple sincer d'un altre si a
+més a més de ser múltiple, la suma dels seus
+dígits és igual al mateix número.
+
+Per exemple, 24 és múltiple sincer de 6, ja que 24 és
+múltiple de 6 i 2+4=6.
+Els múltiples sincers del 3 són:
+3, 12, 21, 30, 102, 111, 120, 201, 210, 300, ...<br>
+
+Feu un programa que donat un nombre i una seqüència de
+nombres acabada en zero compti el nombre de múltiples sincers que
+hi ha a la seqüència. (<b>Sincers.java</b>)<br>
+
+<font size="2">
+Per exemple, si introduïm "3 3 12 32 21 0"
+la sortida serà "Hem trobat 3 multiples sincers de 3".
+</font>
+</li><br>
+
+<li>
+Es diu que dues paraules són encadenades si les dues
+darreres lletres de la primera són iguals a les dues primeres
+de la segona.
+Per exemple: "SAVI" i "VINAGRE" són paraules
+encadenades.
+Feu un programa que llegeixi una frase, acabada amb la paraula
+sentinella <b><tt class="western">fi</tt></b>,
+i imprimeixi per pantalla la primera paraula que
+no és encadenada amb l'anterior.
+(<b>Encadenades.java</b>)<br>
+<font size="2">
+Per exemple, donada la frase "SAVI VINAGRE REMENAR ESTUDIAR
+ARMARI fi" el programa hauria d'imprimir la paraula "ESTUDIAR".
+</font>
+</li><br>
+</ol>
+
+Extra: <br>
+<ul>
+Mastermind és un antic joc en el que participen 2 jugadors. El
+primer pensa una combinació de 4 lletres entre 'A', 'B', 'C',
+'D', 'E' i 'F' i l'altre intenta endevinar-la en el mínim
+d'intents. Feu un programa que generi la combinació guanyadora
+i a continuació demani la solució a l'usuari fins que
+l'endevini. Després de cada intent el programa mostrarà com de
+bona ha estat la solució proposada, mostrant un '+' si la
+lletra està dins de la combinació però en una altra posició, un
+'*' si el caràcter està en la combinació i a més està en la
+posició correcta, o un espai, ' ', si la lletra no està en la
+combinació guanyadora. En acabar, el programa mostrarà en una
+única línia tots els resultats, sense espais separadors, i el
+nombre d'intents fets. (<b>MasterMind.java</b>)<br>
+<br>
+
+<font size="2">
+Per exemple: Si la combinació guanyadora és "ABED" i
+l'usuari ha fet els següents intents: "AFDE", "ADBE"
+i "ABED" el programa hauria d'imprimir al final la
+línia (el guió de subratllat indica un espai):
+<br>
+*_++*+++****3
+<br>
+
+Fixeu-vos que no s'ha de deixar espai entre combinacions ni
+abans del número final.
+</font><br>
+<br>
+
+Necessitareu generar aleatòriament un nombre (per tal que
+l'ordinador triï entre 'A', 'B', 'C', 'D', 'E' i 'F' ). Podeu
+utilitzar el mètode <tt>nextInt</tt> de la classe <tt>Random</tt>
+que si li passem un nombre <tt>n</tt> retorna un
+nombre enter entre 0 i <tt>n</tt> (0 &#8804; nombre &lt; <tt>n</tt>).<br>
+
+<font size="2">
+Per exemple:
+
+<pre style="margin-left: 4cm;"><b>import</b> java.util.*;
+<b>public class</b> ProvaRandom {
+   <b>public static void</b> main(String[] args) {
+      <b>int</b> n;
+      Random aleatori = <b>new</b> Random();
+      n = aleatori.nextInt(3);
+      System.out.println("El nombre aleatori es:" + n);
+  <font size="3">} </font>
+<font size="3">}</font></pre></font><p><font size="2">
+</font><br>
+</p></ul>
+
+
+
+</body></html>
